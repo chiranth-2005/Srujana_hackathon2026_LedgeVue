@@ -1,0 +1,23 @@
+Sample account statement;Synthetic test data only
+Generated for LedgeVue import testing;No real financial data
+;;;;;
+Transaction Date;Description;Debit Amount;Credit Amount;Category;Account
+2026-01-01;Northstar Software;0;125000.00;Salary;Everyday Account
+2026-01-03;Harbor Rent;32000.00;0;Rent;Everyday Account
+2026-01-07;Green Market;4250.50;0;Groceries;Everyday Account
+2026-01-12;Metro Transit;980.00;0;Transport;Everyday Account
+2026-01-18;Cedar Cafe;760.00;0;Dining;Everyday Account
+2026-02-01;Northstar Software;0;125000.00;Salary;Everyday Account
+2026-02-03;Harbor Rent;32000.00;0;Rent;Everyday Account
+2026-02-07;Green Market;3985.25;0;Groceries;Everyday Account
+2026-02-12;Metro Transit;1040.00;0;Transport;Everyday Account
+2026-02-18;Cedar Cafe;890.00;0;Dining;Everyday Account
+;;;;;
+Transaction Date;Description;Debit Amount;Credit Amount;Category;Account
+2026-03-01;Northstar Software;0;125000.00;Salary;Everyday Account
+2026-03-03;Harbor Rent;32000.00;0;Rent;Everyday Account
+2026-03-07;Green Market;4525.00;0;Groceries;Everyday Account
+2026-03-12;Metro Transit;1125.00;0;Transport;Everyday Account
+2026-03-18;Cedar Cafe;1025.00;0;Dining;Everyday Account
+Total;;104561.25;375000.00;;
+Closing Balance;;;;;

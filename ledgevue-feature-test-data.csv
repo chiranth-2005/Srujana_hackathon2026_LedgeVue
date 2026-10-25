@@ -1,0 +1,128 @@
+date,merchant,description,amount,type,category,account
+2026-01-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-01-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-01-07,Green Market,Weekly groceries,2840,expense,Groceries,Primary Checking
+2026-01-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-01-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-01-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-01-20,Freelance Studio,Design project milestone,12500,income,Freelance,Primary Checking
+2026-01-24,Power and Light,Electric bill,2150,expense,Utilities,Primary Checking
+2026-01-27,Book Nook,Language course book,890,expense,Education,Travel Card
+2026-01-29,State Farm Insurance,Quarterly insurance premium,4200,expense,Other,Primary Checking
+2026-02-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-02-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-02-06,Green Market,Weekly groceries,3150,expense,Groceries,Primary Checking
+2026-02-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-02-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-02-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-02-21,Oak and Ember,Casual dinner,1850,expense,Dining,Travel Card
+2026-02-24,Power and Light,Electric bill,1980,expense,Utilities,Primary Checking
+2026-02-27,Transfer to Savings,Own-account transfer,10000,transfer,Other,Primary Checking
+2026-03-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-03-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-03-06,Green Market,Weekly groceries,2975,expense,Groceries,Primary Checking
+2026-03-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-03-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-03-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-03-20,Freelance Studio,Design project milestone,18000,income,Freelance,Primary Checking
+2026-03-24,Power and Light,Electric bill,2310,expense,Utilities,Primary Checking
+2026-03-27,Northstar Books,Online course tuition,2400,expense,Education,Travel Card
+2026-04-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-04-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-04-06,Green Market,Weekly groceries,3210,expense,Groceries,Primary Checking
+2026-04-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-04-10,State Farm Insurance,Quarterly insurance premium,4200,expense,Other,Primary Checking
+2026-04-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-04-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-04-22,Venmo Transfer Cash In,Shared dinner repayment,650,income,Other,UPI Wallet
+2026-04-24,Power and Light,Electric bill,2050,expense,Utilities,Primary Checking
+2026-05-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-05-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-05-06,Green Market,Weekly groceries,3075,expense,Groceries,Primary Checking
+2026-05-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-05-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-05-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-05-21,Trail Outfitters,Walking shoes,4850,expense,Shopping,Travel Card
+2026-05-24,Power and Light,Electric bill,2230,expense,Utilities,Primary Checking
+2026-05-29,Local Cinema,Weekend movie,760,expense,Entertainment,Travel Card
+2026-06-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-06-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-06-06,Green Market,Weekly groceries,3340,expense,Groceries,Primary Checking
+2026-06-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-06-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-06-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-06-20,Freelance Studio,Design project milestone,15250,income,Freelance,Primary Checking
+2026-06-24,Power and Light,Electric bill,2390,expense,Utilities,Primary Checking
+2026-06-27,Green Market,Market price adjustment,350,refund,Groceries,Primary Checking
+2026-07-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-07-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-07-06,Green Market,Weekly groceries,3180,expense,Groceries,Primary Checking
+2026-07-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-07-10,State Farm Insurance,Quarterly insurance premium,4200,expense,Other,Primary Checking
+2026-07-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-07-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-07-20,Freelance Studio,Design project milestone,9500,income,Freelance,Primary Checking
+2026-07-24,Power and Light,Electric bill,2190,expense,Utilities,Primary Checking
+2026-07-28,Transfer from Savings,Own-account transfer,6500,transfer,Other,Savings
+2026-08-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-08-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-08-05,Green Market,Weekly groceries,3280,expense,Groceries,Primary Checking
+2026-08-05,Corner Coffee,Small coffee,145,expense,Dining,UPI Wallet
+2026-08-07,Corner Coffee,Small coffee,155,expense,Dining,UPI Wallet
+2026-08-09,Corner Coffee,Small coffee,175,expense,Dining,UPI Wallet
+2026-08-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-08-11,Corner Coffee,Small coffee,165,expense,Dining,UPI Wallet
+2026-08-13,Corner Coffee,Small coffee,190,expense,Dining,UPI Wallet
+2026-08-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-08-15,Corner Coffee,Small coffee,210,expense,Dining,UPI Wallet
+2026-08-17,Corner Coffee,Small coffee,180,expense,Dining,UPI Wallet
+2026-08-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-08-19,Corner Coffee,Small coffee,220,expense,Dining,UPI Wallet
+2026-08-21,Corner Coffee,Small coffee,195,expense,Dining,UPI Wallet
+2026-08-23,Corner Coffee,Small coffee,205,expense,Dining,UPI Wallet
+2026-08-24,Power and Light,Electric bill,2380,expense,Utilities,Primary Checking
+2026-08-25,Corner Coffee,Small coffee,175,expense,Dining,UPI Wallet
+2026-08-27,Green Market,Produce refund,425,refund,Groceries,Primary Checking
+2026-08-29,Corner Coffee,Small coffee,185,expense,Dining,UPI Wallet
+2026-09-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-09-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-09-05,Green Market,Weekly groceries,3430,expense,Groceries,Primary Checking
+2026-09-06,Corner Coffee,Small coffee,170,expense,Dining,UPI Wallet
+2026-09-08,Corner Coffee,Small coffee,185,expense,Dining,UPI Wallet
+2026-09-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-09-10,Corner Coffee,Small coffee,205,expense,Dining,UPI Wallet
+2026-09-12,Corner Coffee,Small coffee,190,expense,Dining,UPI Wallet
+2026-09-14,Corner Coffee,Small coffee,230,expense,Dining,UPI Wallet
+2026-09-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-09-16,Corner Coffee,Small coffee,215,expense,Dining,UPI Wallet
+2026-09-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-09-18,Corner Coffee,Small coffee,240,expense,Dining,UPI Wallet
+2026-09-20,Freelance Studio,Design project milestone,13500,income,Freelance,Primary Checking
+2026-09-21,Corner Coffee,Small coffee,225,expense,Dining,UPI Wallet
+2026-09-22,Corner Coffee,Small coffee,260,expense,Dining,UPI Wallet
+2026-09-24,Power and Light,Electric bill,2460,expense,Utilities,Primary Checking
+2026-09-25,Corner Coffee,Small coffee,235,expense,Dining,UPI Wallet
+2026-09-27,Green Market,Produce refund,680,refund,Groceries,Primary Checking
+2026-09-29,Corner Coffee,Small coffee,250,expense,Dining,UPI Wallet
+2026-10-01,Northstar Payroll,Monthly salary,85000,income,Salary,Primary Checking
+2026-10-03,Harbor Rent,Apartment rent,32000,expense,Rent,Primary Checking
+2026-10-04,Green Market,Weekly groceries,3640,expense,Groceries,Primary Checking
+2026-10-04,Corner Coffee,Small coffee,195,expense,Dining,UPI Wallet
+2026-10-06,Corner Coffee,Small coffee,220,expense,Dining,UPI Wallet
+2026-10-08,Corner Coffee,Small coffee,245,expense,Dining,UPI Wallet
+2026-10-10,Cloud Storage,Monthly cloud plan,599,expense,Subscriptions,Travel Card
+2026-10-10,Corner Coffee,Small coffee,210,expense,Dining,UPI Wallet
+2026-10-12,Corner Coffee,Small coffee,280,expense,Dining,UPI Wallet
+2026-10-14,Corner Coffee,Small coffee,255,expense,Dining,UPI Wallet
+2026-10-15,City Fitness,Gym membership,1499,expense,Health,Travel Card
+2026-10-16,Corner Coffee,Small coffee,300,expense,Dining,UPI Wallet
+2026-10-18,Metro Transit,Monthly transit pass,1200,expense,Transport,Primary Checking
+2026-10-18,Corner Coffee,Small coffee,285,expense,Dining,UPI Wallet
+2026-10-19,Green Market,Produce refund,520,refund,Groceries,Primary Checking
+2026-10-20,Corner Coffee,Small coffee,310,expense,Dining,UPI Wallet
+2026-10-21,Corner Coffee,Small coffee,295,expense,Dining,UPI Wallet
+2026-10-22,Corner Coffee,Small coffee,330,expense,Dining,UPI Wallet
+2026-10-23,Power and Light,Electric bill,2680,expense,Utilities,Primary Checking
+2026-10-24,Corner Coffee,Small coffee,320,expense,Dining,UPI Wallet
+2026-10-25,Outdoor Outfitters,Seasonal gear purchase,12750,expense,Shopping,Travel Card
+2026-10-25,Transfer to Savings,Own-account transfer,8000,transfer,Other,Primary Checking
