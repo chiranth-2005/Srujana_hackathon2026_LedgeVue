@@ -1,93 +1,188 @@
 # LedgeVue
 
-LedgeVue is a personal finance workspace for reviewing transactions, spending patterns, budgets, recurring charges, and financial scenarios. Data is based on transaction files imported by the signed-in user; the app does not connect to banks.
+LedgeVue is a personal finance workspace for organizing transaction data and understanding spending. Users import their own statements; the application does not connect to banks or retrieve account data automatically.
 
 ## Features
 
+- Create an account and manage a private finance workspace.
 - Import transaction statements in CSV, XLSX, or XLS format.
-- Review transactions, budgets, recurring charges, analytics, and reports.
-- Explore purchase scenarios, savings goals, and configurable financial rules.
-- Keep user accounts and financial records isolated in PostgreSQL.
+- Review transactions and organize spending with categories and budgets.
+- Explore recurring payments, analytics, insights, and reports based on imported data.
+- Use Financial Intelligence tools for purchase scenarios, savings goals, financial rules, and transaction reviews.
+- Update account and application settings.
 
-The importer recognizes common date, merchant, amount, debit, and credit columns. CSV files can use comma, semicolon, tab, or pipe delimiters. Imports are validated and saved in batches. The finance API returns up to the latest 50,000 transactions per user.
+The importer supports common transaction date, merchant, amount, debit, and credit columns. CSV files may use comma, semicolon, tab, or pipe delimiters. [sample-transactions.csv](sample-transactions.csv) contains example data for trying an import.
+
+## Techstack
+
+### Frontend
+
+- **React 19** for the user interface.
+- **TypeScript 5** for typed application code.
+- **Tailwind CSS 4** for styling.
+- **TanStack Start and TanStack Router** for the application framework, server rendering, and file-based routing.
+- **Vite 8** for the frontend development server and build tooling.
+
+The requested frontend technologies React, TypeScript, and Tailwind CSS are used in this project. Framework note: the checked-in application uses TanStack Start and TanStack Router with Vite; it does not currently use Next.js.
+
+### Backend
+
+- **Python 3.11 or newer** for the API service.
+- **FastAPI** for HTTP API routes and request handling.
+- **SQLAlchemy** for database models and queries.
+- **Alembic** for database schema migrations.
+- **Uvicorn** to run the API server locally.
+
+### Database and containers
+
+- **PostgreSQL 17** for persistent application data.
+- **Docker Compose** to run PostgreSQL locally using the included `compose.yaml`.
+- A separately managed PostgreSQL server can also be configured using `DATABASE_URL`.
 
 ## Requirements
 
-- Node.js and npm
-- Python 3.11 or newer
-- Docker Compose with the Docker daemon running, or a local PostgreSQL server
+- Node.js and npm.
+- Python 3.11 or newer.
+- Git.
+- Docker Compose and a running Docker daemon, or access to a PostgreSQL server.
 
-## Local development
+## Local setup
 
-Clone the repository and enter its directory, then configure the backend:
+Clone the repository and run the following from the project root.
+
+### 1. Install dependencies and configure the environment
+
+**Windows PowerShell:**
+
+```powershell
+Copy-Item .env.example .env
+npm ci
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r backend\requirements.txt
+notepad .env
+```
+
+**macOS/Linux:**
 
 ```sh
 cp .env.example .env
-DB_PASSWORD="$(openssl rand -hex 32)"
-sed -i "s/replace-with-a-strong-random-value/$DB_PASSWORD/; s/replace-with-the-same-value/$DB_PASSWORD/" .env
-
 npm ci
 python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r backend/requirements.txt
+.venv/bin/python -m pip install -r backend/requirements.txt
+${EDITOR:-nano} .env
 ```
 
-Start PostgreSQL and create the database schema:
+Set `POSTGRES_PASSWORD` in `.env` to a strong local password. Set `DATABASE_URL` to the same password, for example:
+
+```dotenv
+POSTGRES_PASSWORD=your-local-password
+DATABASE_URL=postgresql+psycopg://ledgevue:your-local-password@localhost:5432/ledgevue
+```
+
+If the password contains URL-reserved characters, encode them in `DATABASE_URL`.
+
+### 2. Start PostgreSQL and apply migrations
+
+Start the database from the project root:
 
 ```sh
 npm run db:up
-npm run db:migrate
 ```
 
-If using a local PostgreSQL server instead of Docker Compose, start it separately and ensure its database, username, password, and port match `DATABASE_URL` in `.env`.
+Apply the schema migrations.
 
-Run the API and frontend in separate terminals from the repository root. Activate `.venv` in the API terminal:
+**Windows PowerShell:**
+
+```powershell
+Set-Location backend
+..\.venv\Scripts\python.exe -m alembic upgrade head
+Set-Location ..
+```
+
+**macOS/Linux:**
+
+```sh
+cd backend
+../.venv/bin/python -m alembic upgrade head
+cd ..
+```
+
+### 3. Run the application
+
+Start the API and frontend in separate terminals from the project root.
+
+**Terminal 1 — API**
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+npm run dev:api
+```
+
+macOS/Linux:
 
 ```sh
 source .venv/bin/activate
 npm run dev:api
 ```
 
+**Terminal 2 — frontend**
+
 ```sh
 npm run dev
 ```
 
-Open the local URL printed by Vite (normally `http://localhost:8080`), create an account, and import a statement from Overview or Settings. `sample-transactions.csv` is a synthetic import example.
+Open the local address printed by the frontend development server. Create an account and import a statement to populate the workspace. The Vite development server proxies `/api` requests to the API at `http://127.0.0.1:8000`.
 
-## Commands
+## Development commands
 
-| Command | Purpose |
+| Command | Description |
 | --- | --- |
-| `npm run dev` | Start the frontend development server |
-| `npm run dev:api` | Start the FastAPI development server |
-| `npm run db:up` | Start the PostgreSQL Compose service |
-| `npm run db:migrate` | Apply Alembic migrations |
-| `npm test` | Run frontend tests |
-| `npm run test:watch` | Run frontend tests in watch mode |
-| `npm run lint` | Run ESLint |
-| `npm run build` | Build the production frontend/server bundle |
-| `npm run preview` | Preview the production build |
+| `npm run dev` | Start the frontend development server. |
+| `npm run dev:api` | Start the FastAPI development server. |
+| `npm run db:up` | Start the PostgreSQL Docker Compose service. |
+| `npm test` | Run frontend tests once. |
+| `npm run test:watch` | Run frontend tests in watch mode. |
+| `npm run lint` | Run ESLint. |
+| `npm run build` | Build the frontend and server bundle. |
+| `npm run preview` | Preview the production build. |
 
-Run backend tests from the `backend` directory with the virtual environment active:
+Run backend tests from the `backend` directory with the project virtual environment active:
 
 ```sh
-cd backend
-python -m unittest discover -s tests -p 'test_*.py'
+python -m unittest discover -s tests -p "test_*.py"
+```
+
+## Project structure
+
+```text
+backend/
+  app/main.py                  FastAPI application, data models, and API endpoints
+  migrations/                  Alembic environment and schema revisions
+  tests/                       Backend tests
+src/
+  components/                  Application shell, authentication, and shared UI
+  hooks/                       Shared React hooks
+  lib/                         API client, finance types, and utilities
+  routes/                      File-based application pages
+  test/                        Frontend tests
+  router.tsx                   TanStack Router setup
+  server.ts                    Server entry point
+  start.ts                     TanStack Start setup
+  styles.css                   Global application styles
+public/                         Static assets
+compose.yaml                    Local PostgreSQL service
+.env.example                    Environment variable template
+package.json                    Frontend scripts and dependencies
+backend/requirements.txt        Python backend dependencies
+sample-transactions.csv         Example transaction import data
 ```
 
 ## Data and security
 
-Passwords are hashed with Argon2. Sessions use random tokens stored as hashes and HttpOnly cookies; state-changing requests require CSRF protection. Finance queries are scoped to the authenticated user. Uploaded files are parsed for import and are not retained as documents.
+User passwords are hashed, sessions use HttpOnly cookies, and requests that change data use CSRF protection. Finance data is associated with the signed-in user. Uploaded statements are parsed for import rather than kept as downloadable documents.
 
-This application does not provide bank connections, automatic transfers, account-balance verification, password recovery, or multi-factor authentication. Purchase projections are indicative and are not financial advice or a certified financial service.
+LedgeVue does not provide bank connections, automatic transfers, or bank-balance verification. Financial projections are informational and are not financial advice.
 
-For production, use HTTPS on a single trusted origin, set `APP_ENV=production` and `SESSION_COOKIE_SECURE=true`, configure exact `APP_ORIGINS` and `ALLOWED_HOSTS`, store secrets outside source control, use managed PostgreSQL with backups, and run migrations as a deployment step. Do not expose the database port publicly. See [SECURITY.md](SECURITY.md) for vulnerability reporting guidance.
-
-## Project layout
-
-```text
-backend/       FastAPI application, Alembic migrations, and backend tests
-src/           TanStack Start frontend and frontend tests
-public/        Static assets
-compose.yaml   Local PostgreSQL service
-```
+For production, use HTTPS, secure session cookies, correctly configured allowed origins and hosts, secrets stored outside source control, and a protected database with backups. Apply migrations as part of deployment. See [SECURITY.md](SECURITY.md) for vulnerability reporting guidance.
