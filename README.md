@@ -15,20 +15,22 @@ The importer supports common transaction date, merchant, amount, debit, and cred
 
 ## Workflow
 
-1. **Create an account or sign in.** The API verifies the user and establishes a session.
-2. **Import transaction data.** The signed-in user uploads a CSV, XLSX, or XLS statement.
-3. **Process and save the import.** The API validates and parses the file, then saves the resulting transactions to PostgreSQL under that user's account.
-4. **Load the finance workspace.** The frontend requests the user's data from the API and presents it in the overview and relevant sections.
-5. **Explore and manage finances.** Review transactions, budgets, recurring payments, analytics, insights, reports, and Financial Intelligence features. Changes and saved scenarios are associated with the signed-in account.
-6. **Sign out.** The session ends and the workspace's cached finance data is cleared from the frontend.
+```mermaid
+flowchart LR
+    A[Create account or sign in] --> B[Import CSV or Excel statement]
+    B --> C[React frontend sends request]
+    C --> D[FastAPI authenticates, validates, and processes]
+    D --> E[(PostgreSQL stores user-scoped records)]
+    E --> F[API returns finance data]
+    F --> G[Review transactions, budgets, analytics, and insights]
+    G --> H[Manage finances or sign out]
 
-```text
-User
-  -> React frontend
-  -> FastAPI authentication and API
-  -> PostgreSQL (user-scoped records)
-  -> FastAPI returns the user's finance data
-  -> Frontend displays and updates the workspace
+    classDef user fill:#eff6ff,stroke:#3b82f6,color:#172554
+    classDef service fill:#f0fdf4,stroke:#22c55e,color:#14532d
+    classDef storage fill:#fefce8,stroke:#eab308,color:#713f12
+    class A,B,G,H user
+    class C,D,F service
+    class E storage
 ```
 
 LedgeVue analyzes data that users import; it does not connect to financial institutions or fetch transactions automatically.
